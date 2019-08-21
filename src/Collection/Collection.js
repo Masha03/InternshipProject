@@ -1,8 +1,8 @@
 import React from "react";
-import "./Colection.css";
+import "./Collection.css";
 
-function Colection() {
-  return <div className="colection">bcksbcjsls</div>;
+function Collection() {
+  return <div className="collection">bcksbcjsls</div>;
 }
 
-export default Colection;
+export default Collection;
