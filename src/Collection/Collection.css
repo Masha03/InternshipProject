@@ -1,0 +1,16 @@
+.collection img {
+  width: 200px;
+}
+.collection {
+  margin: 10px;
+  padding: 50px;
+  display: flex;
+}
+
+.collection .card-item {
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
