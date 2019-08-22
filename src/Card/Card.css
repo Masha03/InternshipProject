@@ -1,5 +1,41 @@
-.card {
-  padding: 10px;
-  background-color: black;
+.collection img {
+  width: 200px;
+  height: 220px;
+  padding: 0 10px 3px 0;
+}
+.collection {
+  width: 100%;
+  margin: 10px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 70px;
+  grid-row-gap: 30px;
+  justify-content: space-around;
+}
+
+.collection .card-item {
+  background: #555;
   margin: 5px;
+  padding: 10px;
+}
+
+.card-details {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: white;
+}
+
+.card-details-title {
+  font-size: 30px;
+  padding: 5px;
+  display: ;
+}
+.card-details-description {
+  font-size: 15px;
+}
+.genre {
+  color: white;
+  font-size: 13px;
+  padding: 10px;
 }
