@@ -34,8 +34,16 @@ class Collection extends React.Component {
     console.log(this.state.movies);
     return (
       <div className="collection">
-        {this.state.movies.map(movie => {
-          return <Card title="" genres={[]} description="" src=""></Card>;
+        {this.state.movies.map((movie, i) => {
+          return (
+            <Card
+              title={movie.title}
+              key={i}
+              genres={movie.genres}
+              description={movie.description}
+              src={movie.src}
+            />
+          );
         })}
       </div>
     );
