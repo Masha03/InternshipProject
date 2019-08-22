@@ -2,15 +2,6 @@
   width: 200px;
   padding: 0 10px 0 0;
 }
-.collection {
-  width: 100%;
-  padding: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 70px;
-  grid-row-gap: 30px;
-  justify-content: space-around;
-}
 .collection .card-item {
   background: #555;
   margin: 5px;
