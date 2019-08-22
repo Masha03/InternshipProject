@@ -1,11 +1,9 @@
 .collection img {
   width: 200px;
-  height: 220px;
-  padding: 0 10px 3px 0;
+  padding: 0 10px 0 0;
 }
 .collection {
   width: 100%;
-  margin: 10px;
   padding: 50px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -13,29 +11,51 @@
   grid-row-gap: 30px;
   justify-content: space-around;
 }
-
 .collection .card-item {
   background: #555;
   margin: 5px;
-  padding: 10px;
+  display: flex;
 }
-
-.card-details {
+.movie-details {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   color: white;
+  padding: 10px;
 }
-
-.card-details-title {
-  font-size: 30px;
-  padding: 5px;
-  display: ;
+.movie-title {
+  font-size: 35px;
+  padding: 5px 0;
 }
-.card-details-description {
-  font-size: 15px;
+.movie-description {
+  font-size: 17px;
+  padding: 10px 0;
 }
 .genre {
-  color: white;
-  font-size: 13px;
-  padding: 10px;
+  display: flex;
+  font-size: 15px;
+  padding: 10px 0;
+}
+.genre-name {
+  position: relative;
+}
+.genre-name::after {
+  content: "|";
+  padding: 0 10px;
+}
+.genre-name:last-child::after {
+  content: "";
+}
+.button {
+  cursor: pointer;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 15px;
+  background-color: coral;
+  border-radius: 20px;
+  color: black;
+  width: 75%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
