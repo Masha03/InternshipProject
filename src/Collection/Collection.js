@@ -2,6 +2,7 @@ import React from "react";
 import "./Collection.css";
 import Card from "../Card/Card";
 import { API_KEY } from "../constant";
+import { Link } from "react-router-dom";
 
 class Collection extends React.Component {
   state = {
@@ -10,11 +11,12 @@ class Collection extends React.Component {
   };
 
   componentDidMount() {
-    console.log("Collection did mount!");
-    console.log("Collection state: ", this.state);
-    this.setState({ status: "error" });
-
-    fetch("https://api.themoviedb.org/3/discover/movie?api_key=" + API_KEY)
+    fetch(
+      "https://api.themoviedb.org/3/discover/movie?api_key=" +
+        API_KEY +
+        "&sort_by=" +
+        this.props.sorting
+    )
       .then(response => response.json())
       .then(response => {
         this.setState({
@@ -22,7 +24,9 @@ class Collection extends React.Component {
             return {
               title: movie.original_title,
               description: movie.overview,
-              src: "https://image.tmdb.org/t/p/w500" + movie.poster_path,
+              src:
+                movie.poster_path &&
+                "https://image.tmdb.org/t/p/w500" + movie.poster_path,
               genres: movie.genre_ids,
             };
           }),
@@ -34,15 +38,17 @@ class Collection extends React.Component {
     console.log(this.state.movies);
     return (
       <div className="collection">
-        {this.state.movies.map((movie, i) => {
+        {this.state.movies.slice(0, this.props.cardCount).map((movie, i) => {
           return (
-            <Card
-              title={movie.title}
-              key={i}
-              genres={movie.genres}
-              description={movie.description}
-              src={movie.src}
-            />
+            <div>
+              <Card
+                title={movie.title}
+                key={i}
+                genres={movie.genres}
+                description={movie.description}
+                src={movie.src}
+              />
+            </div>
           );
         })}
       </div>

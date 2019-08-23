@@ -1,23 +1,20 @@
+body {
+  min-width: 1200px;
+}
 .app {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   background-color: #333;
+  /* background-image: url("/pexels-photo-908283.jpeg"); */
 }
 
 .app-content {
-  width: 1050px;
+  width: 1200px;
   margin: 0 auto;
   flex: 1 1 auto;
 }
 
-.app a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 25px;
-  margin: auto;
-}
-
 .app a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }

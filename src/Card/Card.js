@@ -6,7 +6,14 @@ import { functionTypeAnnotation } from "@babel/types";
 function Card({ title, genres, description, src }) {
   return (
     <div className="card-item">
-      <img src={src} className="image" />
+      {src ? (
+        <img src={src} className="image" alt="" />
+      ) : (
+        <div className="placeholder-wrapper">
+          <img src="./placeholder1.jpg" alt="" />
+        </div>
+      )}
+
       <div className="movie-details">
         <h4 className="movie-title">{title}</h4>
         <ul className="genre">
