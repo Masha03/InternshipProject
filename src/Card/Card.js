@@ -1,9 +1,10 @@
 import React from "react";
 import "./Card.css";
 import { API_KEY } from "../constant";
-import { functionTypeAnnotation } from "@babel/types";
+import { functionTypeAnnotation, tsPropertySignature } from "@babel/types";
+import { Link } from "react-router-dom";
 
-function Card({ title, genres, description, src }) {
+function Card({ title, genres, description, src, to }) {
   return (
     <div className="card-item">
       {src ? (
@@ -24,7 +25,9 @@ function Card({ title, genres, description, src }) {
           ))}
         </ul>
         <p className="movie-description">{description}</p>
-        <button className="button">READ MORE</button>
+        <Link className="button" to={to}>
+          READ MORE
+        </Link>
       </div>
     </div>
   );

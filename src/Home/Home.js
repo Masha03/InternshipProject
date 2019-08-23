@@ -24,6 +24,14 @@ function Home() {
         </Link>
         {/* <Link to="/about">Go To About Page</Link> */}
       </div>
+      <div className="collection-content">
+        <div className="type-title">Best Rated</div>
+        <Collection sorting={"vote_average.desc"} cardCount={4}></Collection>
+        <Link className="more-info" to="popular">
+          View More
+        </Link>
+        {/* <Link to="/about">Go To About Page</Link> */}
+      </div>
     </div>
   );
 }
