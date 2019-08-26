@@ -1,0 +1,27 @@
+.actors {
+  padding: 20px 0;
+}
+.movie-actors {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+.actor-image {
+  width: 100px;
+  padding-right: 10px;
+}
+.actors-details {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  display: flex;
+  padding: 10px;
+}
+.actor-name {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.actor-role {
+  font-size: 15px;
+}

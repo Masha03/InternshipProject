@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 class Collection extends React.Component {
   state = {
-    status: "Succes",
     movies: [],
   };
 
