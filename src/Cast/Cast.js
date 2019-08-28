@@ -1,5 +1,4 @@
 import React from "react";
-import { API_KEY } from "../constant";
 
 import "./Cast.css";
 
@@ -10,9 +9,8 @@ function Cast({ cast }) {
       <ul className="movie-actors">
         {cast &&
           cast.map((actor, index) => {
-            console.log("actor", actor);
             return (
-              <li className="actors-details">
+              <li key={index} className="actors-details">
                 <img className="actor-image" src={actor.image} alt="" />
                 <div className="names">
                   <p className="actor-name">{actor.name}</p>

@@ -8,7 +8,7 @@ import "./Movie.css";
 
 class Movie extends React.Component {
   state = {
-    movie: {},
+    movie: { title: "", description: "", src: "", genres: [] },
     trailer: {},
     cast: [],
   };
@@ -23,7 +23,6 @@ class Movie extends React.Component {
       )
         .then(response => response.json())
         .then(movie => {
-          console.log(movie);
           this.setState({
             movie: {
               title: movie.original_title,
@@ -31,7 +30,7 @@ class Movie extends React.Component {
               src:
                 movie.poster_path &&
                 "https://image.tmdb.org/t/p/w500" + movie.poster_path,
-              genres: movie.genre_ids,
+              genres: movie.genres,
               id: movie.id,
             },
           });
@@ -45,7 +44,6 @@ class Movie extends React.Component {
       )
         .then(response => response.json())
         .then(trailer => {
-          console.log("video", trailer);
           this.setState({
             trailer: {
               trailer_id: trailer.results[0]
@@ -64,7 +62,6 @@ class Movie extends React.Component {
       )
         .then(response => response.json())
         .then(cast => {
-          console.log("cast Movie", cast);
           this.setState({
             cast: cast.cast.map(cast => {
               return {
@@ -88,9 +85,11 @@ class Movie extends React.Component {
           <div className="movie-page-details">
             <h4 className="movie-page-title">{this.state.movie.title}</h4>
             <ul className="movie-genre">
-              <li className="movie-genre-name">Drama</li>
-              <li className="movie-genre-name">Action</li>
-              <li className="movie-genre-name">Horror</li>
+              {this.state.movie.genres.map(genre => (
+                <li key={genre.id} className="movie-genre-name">
+                  {genre.name}
+                </li>
+              ))}
             </ul>
             <p className="movie-description">{this.state.movie.description}</p>
           </div>

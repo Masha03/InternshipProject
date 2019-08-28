@@ -1,7 +1,5 @@
 import React from "react";
 import "./Card.css";
-import { API_KEY } from "../constant";
-import { functionTypeAnnotation, tsPropertySignature } from "@babel/types";
 import { Link } from "react-router-dom";
 
 function Card({ title, genres, description, src, to }) {
