@@ -1,11 +1,11 @@
-.collection img {
+.image {
   width: 200px;
 }
 .placeholder-wrapper img {
   width: 200px;
   height: 300px;
 }
-.collection .card-item {
+.card-item {
   background: #555;
   margin: 5px;
   display: flex;

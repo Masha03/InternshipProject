@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import { API_KEY } from "../constant";
+import "./Search.css";
+
+import Card from "../Card/Card";
 
 class Search extends Component {
-  state = { value: "" };
+  state = {
+    value: "",
+    movies: [],
+  };
 
   handleChange(event) {
     this.setState({
@@ -17,21 +23,52 @@ class Search extends Component {
         this.state.value
     )
       .then(response => response.json())
-      .then(result => console.log(result));
+      .then(object => {
+        this.setState({
+          movies: object.results.map(movie => ({
+            title: movie.original_title,
+            description: movie.overview,
+            src:
+              movie.poster_path &&
+              "https://image.tmdb.org/t/p/w500" + movie.poster_path,
+            genres_names: movie.genre_ids,
+            id: movie.id,
+          })),
+        });
+      });
   }
 
   render() {
     return (
       <div className="search-page">
-        <div>
+        <div className="search-space">
           <input
+            className="input"
             type="text"
             value={this.state.value}
             onChange={this.handleChange.bind(this)}
           />
+
+          <button
+            className="search-button"
+            onClick={this.handleClick.bind(this)}>
+            Search
+          </button>
         </div>
-        <div>
-          <button onClick={this.handleClick.bind(this)}>Search</button>
+        <div className="collection">
+          {this.state.movies.map((movie, i) => {
+            return (
+              <div key={i}>
+                <Card
+                  title={movie.title}
+                  genres={movie.genres_names}
+                  description={movie.description}
+                  src={movie.src}
+                  to={"/movie/" + movie.id}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     );

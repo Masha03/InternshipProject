@@ -7,7 +7,9 @@ function Header(props) {
     <header className="header">
       <div className="header-logo">
         {props.logoText}
-        <img className="logo-image" src={props.image} alt="" />
+        <Link to="/">
+          <img className="logo-image" src={props.image} alt="" />
+        </Link>
       </div>
       <ul className="header-menu">
         {props.menu.map(item => (
