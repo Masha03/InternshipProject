@@ -3,7 +3,6 @@ import React from "react";
 import "./Cast.css";
 
 function Cast({ cast }) {
-  console.log("Cast", cast);
   return (
     <div className="actors">
       <ul className="movie-actors">

@@ -79,9 +79,9 @@ class Movie extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="movie-page">
-          <img className="movie-image" src={this.state.movie.src} alt="" />
+      <div className="movie-page">
+        <img className="movie-image" src={this.state.movie.src} alt="" />
+        <div className="movie-page-info">
           <div className="movie-page-details">
             <h4 className="movie-page-title">{this.state.movie.title}</h4>
             <ul className="movie-genre">
@@ -93,9 +93,9 @@ class Movie extends React.Component {
             </ul>
             <p className="movie-description">{this.state.movie.description}</p>
           </div>
+          <Trailer trailerID={this.state.trailer.trailer_id} />
+          <Cast className="cast-movie" cast={this.state.cast} />
         </div>
-        <Cast cast={this.state.cast} />
-        <Trailer trailerID={this.state.trailer.trailer_id} />
       </div>
     );
   }

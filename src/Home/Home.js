@@ -19,18 +19,16 @@ function Home() {
         <Collection
           sorting={"primary_release_date.desc"}
           cardCount={4}></Collection>
-        <Link className="more-info" to="popular">
+        <Link className="more-info" to="new">
           View More
         </Link>
-        {/* <Link to="/about">Go To About Page</Link> */}
       </div>
       <div className="collection-content">
         <div className="type-title">Best Rated</div>
         <Collection sorting={"vote_average.desc"} cardCount={4}></Collection>
-        <Link className="more-info" to="popular">
+        <Link className="more-info" to="best">
           View More
         </Link>
-        {/* <Link to="/about">Go To About Page</Link> */}
       </div>
     </div>
   );

@@ -24,16 +24,31 @@ class Search extends Component {
     )
       .then(response => response.json())
       .then(object => {
-        this.setState({
-          movies: object.results.map(movie => ({
+        Promise.all([
+          fetch(
+            "https://api.themoviedb.org/3/search/movie?api_key=" +
+              API_KEY +
+              "&query=" +
+              this.state.value
+          ).then(y => y.json()),
+          fetch(
+            "https://api.themoviedb.org/3/genre/movie/list?api_key=" + API_KEY
+          ).then(y => y.json()),
+        ]).then(results => {
+          const movies = results[0].results;
+          const genres = results[1].genres;
+          const newMovies = movies.map(movie => ({
             title: movie.original_title,
             description: movie.overview,
             src:
               movie.poster_path &&
               "https://image.tmdb.org/t/p/w500" + movie.poster_path,
-            genres_names: movie.genre_ids,
+            genres_names: movie.genre_ids.map(
+              genreID => genres.find(genre => genre.id === genreID).name
+            ),
             id: movie.id,
-          })),
+          }));
+          this.setState({ movies: newMovies });
         });
       });
   }
@@ -48,7 +63,6 @@ class Search extends Component {
             value={this.state.value}
             onChange={this.handleChange.bind(this)}
           />
-
           <button
             className="search-button"
             onClick={this.handleClick.bind(this)}>

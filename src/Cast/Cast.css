@@ -4,10 +4,14 @@
 .movie-actors {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
 .actor-image {
+  width: 100px;
+  padding-right: 10px;
+}
+.actor-placeholder {
   width: 100px;
   padding-right: 10px;
 }
