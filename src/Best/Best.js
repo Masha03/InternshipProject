@@ -5,7 +5,7 @@ import Collection from "../Collection/Collection";
 function Best() {
   return (
     <div className="home">
-      <Collection sorting={"vote_average.desc"}></Collection>
+      <Collection sorting="vote_average.desc"></Collection>
     </div>
   );
 }

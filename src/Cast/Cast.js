@@ -12,8 +12,8 @@ function Cast({ cast }) {
               <li key={index} className="actors-details">
                 <img className="actor-image" src={actor.image} alt="" />
                 <div className="names">
-                  <p className="actor-name">{actor.name}</p>
-                  <p className="actor-role">{actor.role}</p>
+                  <h3 className="actor-name">{actor.name}</h3>
+                  <h5 className="actor-role">{actor.role}</h5>
                 </div>
               </li>
             );

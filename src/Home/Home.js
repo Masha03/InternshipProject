@@ -8,24 +8,24 @@ function Home() {
   return (
     <div className="home-content">
       <div className="collection-content">
-        <div className="type-title">Popular</div>
-        <Collection sorting={"popularity.desc"} cardCount={4}></Collection>
+        <h1 className="type-title">Popular</h1>
+        <Collection sorting="popularity.desc" cardCount={4}></Collection>
         <Link className="more-info" to="popular">
           View More
         </Link>
       </div>
       <div className="collection-content">
-        <div className="type-title">New</div>
+        <h1 className="type-title">New</h1>
         <Collection
-          sorting={"primary_release_date.desc"}
+          sorting="primary_release_date.desc"
           cardCount={4}></Collection>
         <Link className="more-info" to="new">
           View More
         </Link>
       </div>
       <div className="collection-content">
-        <div className="type-title">Best Rated</div>
-        <Collection sorting={"vote_average.desc"} cardCount={4}></Collection>
+        <h1 className="type-title">Best Rated</h1>
+        <Collection sorting="vote_average.desc" cardCount={4}></Collection>
         <Link className="more-info" to="best">
           View More
         </Link>
